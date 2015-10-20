@@ -1,6 +1,6 @@
 # questionbot
 
-A bot for Slack, used to ask anonymous questions.
+A bot for Slack used to ask anonymous questions.
 
 ## How questionbot Works
 
@@ -12,9 +12,9 @@ The primary use case around questionbot is for asking anonymous questions to com
 
 ### A note on the anonymous element of questionbot
 
-questionbot is not 100% anonymous. This is because owners of a Slack organization that uses Slack pro can [download the entire message history for their organization, including private messages](https://evidation.slack.com/pricing/plus).
+questionbot is not 100% anonymous. This is because owners of a Slack organization that uses Slack Plus can [download the entire message history for their organization, including private messages](https://evidation.slack.com/pricing/plus) as part of compliance.
 
-For all intents and purposes, questionbot remains anonymous to everyone who does not have access to that functionality, including non-administrative members of your team. However, if you choose to use questionbot in your organization, be aware that if someone with administrative access to Slack could gain knowledge of who asked what questions.
+For all intents and purposes, questionbot remains anonymous to everyone who does not have access to that functionality, including non-administrative members of your team. However, if you choose to use questionbot in your organization, be aware that someone with administrative access to Slack could gain knowledge of who asked what questions.
 
 ## Configuring questionbot
 
