@@ -1,0 +1,12 @@
+
+{
+  "name": "slack-questionbot",
+  "version": "1.0.0",
+  "description": "A bot for Slack that recieves questions and posts them to a channel, anonymizing the person who sent the message.",
+  "main": "slack-questionbot.js",
+  "scripts": {
+    "start": "meteor --settings settings.json"
+  },
+  "author": "Joey Bright",
+  "license": "MIT"
+}

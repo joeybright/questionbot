@@ -1,0 +1,10 @@
+{
+  "public": {
+  },
+  "private": {
+    "slack": {
+        "questionbotSlackAPIToken": "token-here",
+        "questionbotChannel": "questions"
+    }
+  }
+}
