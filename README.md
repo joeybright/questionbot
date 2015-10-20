@@ -30,7 +30,7 @@ Then, choose a channel for questionbot to post any questions it receives to. Add
 
 Once those settings are setup, change the name of the settings-example.json file to settings.json. Then, run questionbot. If everything is entered correctly, you'll see the bot appear online in Slack!
 
-## Run questionbot
+## Running questionbot
 
 Before running questionbot, make sure to have configured it correctly or it will not run. See the "Configuring questionbot" section above.
 
