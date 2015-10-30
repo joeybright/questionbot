@@ -5,7 +5,6 @@ let getChannelIdFromName = (token, channelName) => {
   let allChannels = SlackAPI.channels.list(token).channels,
       // Finds the channel object based on the channel name
       channel     =  _.where(allChannels, {name: channelName});
-  // In the future: creates a channel if there is no matching channel?
   // Returns the ID of the channel
   return channel[0].id;
 };
@@ -24,11 +23,6 @@ let isPrivateChannel = (token, channel) => {
   }
   return false;
 };
-
-// Creates a Slack channel, returns the ID of created channel
-// let createChannel = (channelName) => {
-//   return SlackAPI.channel.create(channelName);
-// };
 
 // Registers the modules
 Modules.server.getChannelIdFromName = getChannelIdFromName;
