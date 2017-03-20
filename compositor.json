@@ -1,0 +1,143 @@
+{
+  "name": "joeybright/questionbot",
+  "version": "0.1.4",
+  "libraries": {
+    "xv": "^1.1.25"
+  },
+  "title": "Questionbot",
+  "branch": "",
+  "style": {
+    "name": "Default",
+    "componentSet": {
+      "nav": "nav/BasicNav",
+      "header": "header/BannerHeader",
+      "article": "article/BasicArticle",
+      "footer": "footer/BasicFooter"
+    },
+    "fontFamily": "-apple-system, BlinkMacSystemFont, sans-serif",
+    "fontWeight": 400,
+    "bold": 600,
+    "lineHeight": 1.5,
+    "typeScale": [
+      72,
+      48,
+      24,
+      20,
+      16,
+      14,
+      12
+    ],
+    "monospace": "Menlo, monospace",
+    "heading": {
+      "fontFamily": null,
+      "fontStyle": null,
+      "fontWeight": 600,
+      "lineHeight": 1.25,
+      "textTransform": null,
+      "letterSpacing": null
+    },
+    "h0": {},
+    "h1": {},
+    "h2": {},
+    "h3": {},
+    "h4": {},
+    "h5": {},
+    "h6": {},
+    "alternativeText": {},
+    "space": [
+      0,
+      8,
+      16,
+      32,
+      48,
+      64,
+      96
+    ],
+    "layout": {
+      "maxWidth": 1024,
+      "centered": false
+    },
+    "colors": {
+      "text": "#111",
+      "background": "#fff",
+      "primary": "#08e",
+      "secondary": "#059",
+      "highlight": "#e08",
+      "border": "#ddd",
+      "muted": "#eee"
+    },
+    "border": {
+      "width": 1,
+      "radius": 2
+    },
+    "link": {},
+    "button": {
+      "hover": {
+        "boxShadow": "inset 0 0 0 999px rgba(0, 0, 0, .125)"
+      }
+    },
+    "input": {},
+    "body": {
+      "margin": 0
+    },
+    "breakpoints": {
+      "xs": "@media screen and (max-width:40em)",
+      "sm": "@media screen and (min-width:40em)",
+      "md": "@media screen and (min-width:52em)",
+      "lg": "@media screen and (min-width:64em)"
+    }
+  },
+  "content": [
+    {
+      "component": "nav",
+      "links": [
+        {
+          "href": "https://github.com/joeybright/questionbot",
+          "text": "GitHub"
+        },
+        {
+          "href": "https://npmjs.com/package/slack-questionbot",
+          "text": "npm"
+        }
+      ]
+    },
+    {
+      "component": "header",
+      "heading": "questionbot",
+      "subhead": "A bot for Slack used to ask anonymous questions.",
+      "children": [
+        {
+          "component": "ui/TweetButton",
+          "text": "questionbot: A bot for Slack used to ask anonymous questions.",
+          "url": null
+        },
+        {
+          "component": "ui/GithubButton",
+          "user": "joeybright",
+          "repo": "questionbot"
+        }
+      ],
+      "text": "v1.0.0"
+    },
+    {
+      "component": "article",
+      "metadata": {
+        "source": "github.readme"
+      },
+      "html": "\n\n<h2>How questionbot Works</h2>\n<p>questionbot has one purpose: To take <em>any</em> private messages it receives and post it to another channel as itself. This anonymizes the user who asked the question, hopefully allowing team members to ask better questions without fear of any judgement.</p>\n<h3>Use cases</h3>\n<p>The primary use case around questionbot is for asking anonymous questions to company leadership through a tool many companies use: Slack. However, the functionality of questionbot can be used for other purposes, such as anonymous employee feedback or company criticism.</p>\n<h3>A note on the anonymous element of questionbot</h3>\n<p>questionbot is not 100% anonymous. This is because owners of a Slack organization that uses Slack Plus can <a href=\"https://evidation.slack.com/pricing/plus\">download the entire message history for their organization, including private messages</a> as part of compliance.</p>\n<p>For all intents and purposes, questionbot remains anonymous to everyone who does not have access to that functionality, including non-administrative members of your team. However, if you choose to use questionbot in your organization, be aware that someone with administrative access to Slack could gain knowledge of who asked what questions.</p>\n<h2>Configuring questionbot</h2>\n<p>To get questionbot configured and running, you need two pieces of information: An API token from a Slack bot user and the name of the channel you&apos;d like questionbot to post the private messages it receives.</p>\n<p>To get an API token for a Slack bot, you need to first create a Slack bot user. Slack has a simple guide to doing just that: <a href=\"https://api.slack.com/bot-users\">https://api.slack.com/bot-users</a></p>\n<p>Once you have the API token, paste it into the questionbotSlackAPIToken value in the settings-example.json file.</p>\n<p>Then, choose a channel for questionbot to post any questions it receives to. Add the channel name to the questionbotChannel value in the settings-example.json file.  <em>Do not</em> include the # in the channel name.</p>\n<blockquote>\n<p>Note: If you specify a channel that doesn&apos;t exist for questionbot to post to, it <em>will not</em> work.</p>\n</blockquote>\n<p>Once those settings are setup, change the name of the settings-example.json file to settings.json. Then, run questionbot. If everything is entered correctly, you&apos;ll see the bot appear online in Slack!</p>\n<h2>Running questionbot</h2>\n<p>Before running questionbot, make sure to have configured it correctly or it will not run. See the &quot;Configuring questionbot&quot; section above.</p>\n<p>questionbot was built using Meteor.js, mostly because it&apos;s what I know how to use and requires little configuration to get up and running quickly. To get questionbot running, make sure that Meteor is installed.</p>\n<p>To install Meteor:</p>\n<pre>  curl http<span class=\"hljs-variable\">s:</span>//install.meteor.<span class=\"hljs-keyword\">com</span> | /bin/<span class=\"hljs-keyword\">sh</span></pre><p>Once Meteor is installed and questionbot properly configured navigate to the /questionbot directory and run</p>\n<pre>  <span class=\"hljs-built_in\">npm</span> start</pre><p>The command will run the Meteor, using the settings.json file to get your configuration options. The questionbot user in Slack should now be online and act appropriately.</p>\n<h2>Deploying questionbot</h2>\n<p>Below are a few suggestion on hosts and tools to help deploying questionbot:</p>\n<p>Modulus makes it dead simple to deploy questionbot: <a href=\"http://help.modulus.io/customer/en_us/portal/articles/1647770-getting-started-with-meteor-on-modulus?b_id=9670\">http://help.modulus.io/customer/en_us/portal/articles/1647770-getting-started-with-meteor-on-modulus?b_id=9670</a></p>\n<p>Alternatively, you can use MUP which requires more configuration but also more control over where you can host: <a href=\"https://github.com/arunoda/meteor-up\">https://github.com/arunoda/meteor-up</a></p>\n"
+    },
+    {
+      "component": "footer",
+      "links": [
+        {
+          "href": "https://github.com/joeybright/questionbot",
+          "text": "GitHub"
+        },
+        {
+          "href": "https://github.com/joeybright",
+          "text": "joeybright"
+        }
+      ]
+    }
+  ]
+}
